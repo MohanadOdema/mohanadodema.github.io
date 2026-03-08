@@ -1,0 +1,491 @@
+/* ========================================
+   Site Stylesheet — mohanadodema.github.io
+   ======================================== */
+
+/* --- Reset & Base --- */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f5f7fa;
+  --bg-nav: #fafafa;
+  --text-primary: #2d2d2d;
+  --text-secondary: #5a5a6e;
+  --text-muted: #8c8c9e;
+  --accent-heading: #1a1a2e;
+  --accent-link: #4a6fa5;
+  --accent-link-hover: #2c4a7c;
+  --accent-highlight: #4a6fa5;
+  --border-subtle: #e2e2e8;
+  --nav-height: 56px;
+  --content-max-width: 800px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--text-primary);
+  background: var(--bg-primary);
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--accent-link);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: var(--accent-link-hover);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+h1, h2, h3, h4 {
+  color: var(--accent-heading);
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+h1 { font-size: clamp(1.75rem, 3vw, 2rem); }
+h2 { font-size: clamp(1.25rem, 2.5vw, 1.5rem); margin-bottom: 1rem; }
+h3 { font-size: 1.125rem; margin-bottom: 0.75rem; }
+h4 { font-size: 1rem; margin-bottom: 0.5rem; color: var(--text-secondary); }
+
+p {
+  margin-bottom: 1rem;
+}
+
+/* --- Navigation --- */
+.site-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--nav-height);
+  background: var(--bg-nav);
+  border-bottom: 1px solid var(--border-subtle);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+}
+
+.nav-inner {
+  width: 100%;
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-brand {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--accent-heading);
+  text-decoration: none;
+}
+
+.nav-brand:hover {
+  color: var(--accent-link);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.75rem;
+  align-items: center;
+}
+
+.nav-links a {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  padding-bottom: 2px;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.nav-links a:hover {
+  color: var(--accent-heading);
+}
+
+.nav-links a.active {
+  color: var(--accent-highlight);
+  border-bottom-color: var(--accent-highlight);
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  color: var(--text-primary);
+}
+
+.nav-toggle span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--text-primary);
+  margin: 5px 0;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+/* --- Main Content --- */
+.site-main {
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+  padding: calc(var(--nav-height) + 3rem) 1.5rem 3rem;
+}
+
+/* --- Footer --- */
+.site-footer {
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  border-top: 1px solid var(--border-subtle);
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.footer-icons {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.footer-icons a {
+  color: var(--text-muted);
+  font-size: 1.25rem;
+  transition: color 0.2s;
+}
+
+.footer-icons a:hover {
+  color: var(--accent-link);
+}
+
+/* --- About Page --- */
+.about-header {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.about-avatar {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.about-title h1 {
+  margin-bottom: 0.25rem;
+}
+
+.about-subtitle {
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+}
+
+.about-body p {
+  margin-bottom: 1.25rem;
+}
+
+.contact-row {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.contact-row .contact-email {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  margin-bottom: 0.75rem;
+}
+
+.contact-icons {
+  list-style: none;
+  display: flex;
+  gap: 1.25rem;
+}
+
+.contact-icons a {
+  color: var(--text-secondary);
+  font-size: 1.4rem;
+  transition: color 0.2s;
+}
+
+.contact-icons a:hover {
+  color: var(--accent-link);
+}
+
+/* --- Publications Page --- */
+.pub-header {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.pub-header .scholar-link {
+  font-size: 0.95rem;
+}
+
+.pub-section {
+  margin-bottom: 2.5rem;
+}
+
+.pub-list {
+  list-style: decimal;
+  padding-left: 1.5rem;
+}
+
+.pub-list li {
+  margin-bottom: 1.25rem;
+  line-height: 1.6;
+}
+
+.pub-title {
+  font-size: 1rem;
+}
+
+.pub-title a {
+  color: var(--accent-link);
+}
+
+.pub-title a:hover {
+  color: var(--accent-link-hover);
+}
+
+.pub-authors {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.pub-authors .me {
+  color: var(--accent-heading);
+  font-weight: 600;
+}
+
+.pub-venue {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+/* --- Things I Like Hub --- */
+.hub-intro {
+  margin-bottom: 2.5rem;
+}
+
+.hub-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.hub-card {
+  display: block;
+  padding: 2rem 1.5rem;
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  text-align: center;
+  text-decoration: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.hub-card:hover {
+  border-color: var(--accent-link);
+  box-shadow: 0 2px 12px rgba(74, 111, 165, 0.1);
+}
+
+.hub-card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--accent-heading);
+  margin-bottom: 0.5rem;
+}
+
+.hub-card-desc {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+/* --- Sub-page back link --- */
+.back-link {
+  display: inline-block;
+  margin-bottom: 2rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.back-link:hover {
+  color: var(--accent-link);
+}
+
+/* --- Books Page --- */
+.book-list {
+  list-style: none;
+}
+
+.book-item {
+  margin-bottom: 0.5rem;
+}
+
+.book-title {
+  font-weight: 600;
+  color: var(--accent-heading);
+  font-size: 1rem;
+  display: inline;
+}
+
+.book-author {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  display: inline;
+}
+
+.book-note {
+  color: var(--text-primary);
+  font-size: 0.95rem;
+}
+
+/* --- Page Subtitle (inline with h2) --- */
+.page-subtitle {
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: var(--text-muted);
+  margin-left: 0.5rem;
+}
+
+/* --- Quotes Page --- */
+.quote-list {
+  list-style: none;
+}
+
+.quote-item {
+  margin-bottom: 2rem;
+  padding-left: 1.25rem;
+  border-left: 3px solid var(--border-subtle);
+}
+
+.quote-text {
+  font-size: 1.05rem;
+  font-style: italic;
+  color: var(--text-primary);
+  line-height: 1.8;
+  margin-bottom: 0.5rem;
+}
+
+.quote-attribution {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+/* --- Photography Page --- */
+.photo-masonry {
+  columns: 3;
+  column-gap: 0.75rem;
+}
+
+.photo-masonry img {
+  width: 100%;
+  display: block;
+  margin-bottom: 0.75rem;
+  border-radius: 4px;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: var(--nav-height);
+    left: 0;
+    right: 0;
+    background: var(--bg-nav);
+    border-bottom: 1px solid var(--border-subtle);
+    flex-direction: column;
+    padding: 1rem 1.5rem;
+    gap: 0.75rem;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links a {
+    font-size: 1rem;
+    padding: 0.5rem 0;
+  }
+
+  .about-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.25rem;
+  }
+
+  .about-avatar {
+    width: 120px;
+    height: 120px;
+  }
+
+  .contact-icons {
+    justify-content: center;
+  }
+
+  .contact-row {
+    text-align: center;
+  }
+
+  .hub-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .site-main {
+    padding-top: calc(var(--nav-height) + 2rem);
+  }
+
+  .photo-masonry {
+    columns: 2;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-avatar {
+    width: 100px;
+    height: 100px;
+  }
+
+  .pub-list {
+    padding-left: 1rem;
+  }
+
+  .photo-masonry {
+    columns: 1;
+  }
+}
